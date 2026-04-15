@@ -1,0 +1,320 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top left, #5b3a4a, #1e1b2e);
+  color: #fff;
+}
+
+.dashboard {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filters {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 8px;
+  border-radius: 12px;
+}
+
+.filters button {
+  background: black;
+  color: white;
+  border: none;
+  margin: 0 4px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filters button:hover {
+  background: #444;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.stat-card {
+  background: #5a3b4c;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+/* ================== Charts ================== */
+
+.charts-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.chart-card {
+  background: #3a2633;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+/* ================== Cards ================== */
+
+.card {
+  background: linear-gradient(145deg, #4b3b46, #2f2630);
+  border-radius: 20px;
+  padding: 20px;
+
+  width: 100%;
+  max-width: 100%;
+
+  color: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-sizing: border-box; /* مهم جدًا يمنع التخبيط */
+}
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px; /* ده اللي يمنع الخبط */
+}
+/* ================== Maps ================== */
+
+.fake-map {
+  position: relative;
+  height: 260px;
+  background: radial-gradient(circle at center, #1f1f2e, #151521);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.world-map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg")
+    no-repeat center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* Map container */
+
+.map-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(145deg, #0f172a, #1e293b);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  grid-column: span 2;
+}
+
+/* Grid */
+
+.map-grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Pins */
+
+.map-pin {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #6366f1;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #6366f1;
+  animation: pulse 1.5s infinite;
+}
+
+/* Map card */
+
+.map-card {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  background: rgba(30, 41, 59, 0.9);
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ================== Points & Dots ================== */
+
+.point,
+.dot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+/* point (نسخة glow) */
+.point {
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  background: rgba(255, 107, 107, 0.8);
+  box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+}
+
+/* dot (نسخة label + circle حسب الاستخدام) */
+.dot {
+  background: #ff8c42;
+  padding: 4px 6px;
+  border-radius: 6px;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+/* Positions */
+
+.usa { top: 40%; left: 25%; }
+.europe { top: 35%; left: 50%; }
+.asia { top: 40%; left: 70%; }
+.africa { top: 55%; left: 50%; }
+
+/* ================== Animation ================== */
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  70% { transform: scale(1.8); opacity: 0.3; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ================== Chart Card ================== */
+
+.title {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.chart {
+  width: 100%;
+  max-width: 250px;
+  height: 250px;
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legend-item .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.label {
+  flex: 1;
+  font-size: 14px;
+}
+
+.value {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* ================== Responsive ================== */
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chart {
+    max-width: 200px;
+    height: 200px;
+  }
+
+  .legend {
+    width: 100%;
+  }
+
+  .legend-item {
+    justify-content: space-between;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .dot {
+    font-size: 8px;
+    padding: 3px 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 12px;
+  }
+
+  .chart {
+    max-width: 180px;
+    height: 180px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .label,
+  .value {
+    font-size: 13px;
+  }
+
+  .dot {
+    font-size: 7px;
+  }
+}
+
+.card {
+  background: linear-gradient(145deg, #3a2c3f, #2a1f2e);
+  padding: 20px;
+  border-radius: 20px;
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.card h3 {
+  text-align: center;
+  margin-bottom: 15px;
+}
